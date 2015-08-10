@@ -1,0 +1,26 @@
+{
+  "name": "nodetunes",
+  "version": "1.0.0",
+  "description": "creating itunes-like app using Nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jybjones/nodeTunes.git"
+  },
+  "author": "Jennifer Jones <jybjones@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jybjones/nodeTunes/issues"
+  },
+  "homepage": "https://github.com/jybjones/nodeTunes#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
+    "less-middleware": "^2.0.1",
+    "loggly": "^1.0.8"
+  }
+}
