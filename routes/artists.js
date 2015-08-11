@@ -12,13 +12,25 @@ router.get('/', function(req, res) {
         _id:       artist._id,
         name:      artist.name,
         genre:     artist.genre,
-        bio:       artist.bio
+        bio:       artist.bio,
+        album:     artist.album
       };
     });
     res.render('templates/artists', {artists: formattedArtists});
   });
 
 });
+
+router.get('/new', function (req, res) {
+  res.render('templates/artists-new');
+});
+
+router.post('/new', function (req, res) {
+  var collection = global.db.collection('artists');
+    collection.save(req.body, function(){
+      res.redirect('/artists');
+    });
+  });
 
 
 router.post('/', function(req, res) {

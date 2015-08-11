@@ -9,30 +9,16 @@
     </head>
 
     <body>
-      <h2>Enter Artists</h2>
-      <form action="/artists" method="POST">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input name="name" type="text" placeholder="Metallica">
-        </div>
-        <div class="form-group">
-          <label for="genre">Genre:</label>
-          <input name="genre" type="text" placeholder="Metal">
-        </div>
-        <div class="form-group">
-          <label for="bio">Bio:</label>
-          <textarea name="bio" rows="6"></textarea>
-        </div>
-        <button type="submit" class="btn btn-info">Submit</button>
-       </form>
+      <a href ="/artists/new">Search New Artist</a>
 
-      <h3> Artists </h3>
+      <h1> Artists </h1>
       <table>
         <thead>
           <tr>
             <th>Name</th>
             <th>Genre</th>
-            <th>Bio</th>
+            <th >Bio </th>
+            <th>Album</th>
           </tr>
         </thead>
         <tbody>
@@ -40,7 +26,9 @@
               <tr>
                 <td><%= artist.name %></td>
                 <td><%= artist.genre %></td>
-                <td><%= artist.bio %></td>
+                <td><textarea name="bio" rows="3"><%= artist.bio %></textarea>
+                </td>
+                <td><%= artist.album %></td>
               </tr>
             <% }); %>
         </tbody>
