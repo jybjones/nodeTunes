@@ -5,6 +5,8 @@ var lessCSS = require('less-middleware');
 var bodyParser = require('body-parser');
 
 var app = express();
+var router = express.Router();
+var ObjectID = require('mongodb').ObjectID;
 
 //routes//
 var routes = require('./routes/index');
@@ -38,8 +40,7 @@ app.use('/albums', albums);
 
 //Errors//
 app.use(function (req, res) {
-  res.status(403);
-  send('Unauthorized!');
+  res.status(403).send('Unauthorized!');
 });
 
 app.use(function (err, req, res, next) {

@@ -8,7 +8,15 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-      <h2>Enter Artist</h2>
+      <h2>Search if Artist is already in Database</h2>
+      <!-- <form action="/artists/new" method="POST"> -->
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input name="name" type="text" placeholder="Name">
+          <button type="submit" class="btn btn-info">Search</button>
+        </div>
+
+      <h2>Enter New Artist Info</h2>
       <a href="/artists">Cancel</a>
        <form action="/artists/new" method="POST">
         <div class="form-group">
@@ -24,8 +32,8 @@
           <textarea name="bio" rows="6"></textarea>
         </div>
         <div class="form-group">
-          <label for="bio">Album:</label>
-          <textarea name="bio" rows="3"></textarea>
+          <label for="album">Album:</label>
+          <textarea name="album" rows="3"></textarea>
         </div>
         <button type="submit" class="btn btn-info">Submit</button>
        </form>

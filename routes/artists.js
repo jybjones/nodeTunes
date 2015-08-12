@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
         name:      artist.name,
         genre:     artist.genre,
         bio:       artist.bio,
-        album:     artist.album
+        album:     artist.album,
       };
     });
     res.render('templates/artists', {artists: formattedArtists});

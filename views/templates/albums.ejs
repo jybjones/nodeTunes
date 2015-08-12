@@ -4,33 +4,36 @@
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <meta charset="utf-8">
     <meta http-equiv="X-US-Compatible" content="IE=edge">
-    <title><%= title %> | 'Albums' </title>
+    <title><%= title %> | 'All Albums' </title>
         <link rel="stylesheet" href="css/main.css">
     </head>
 
     <body>
-      <h2>Albums</h2>
-      <form action="/albums" method="POST">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <!-- <input name="name" type="text" placeholder="Metallica"> -->
-        </div>
-        <div class="form-group">
-          <label for="genre">Genre:</label>
-         <!--  <input name="genre" type="text" placeholder="Metal"> -->
-        </div>
+      <a href ="/albums/new">Add New Album</a>
 
-        <button type="submit" class="btn btn-info">Submit</button>
-       </form>
-
-      <h3> Albums </h3>
+      <h1> All Albums </h1>
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Artist</th>
+            <th>Title</th>
             <th>Genre</th>
+            <th >Year </th>
           </tr>
         </thead>
-     </table>
+
+        <tbody>
+            <% albums.forEach(function(album) { %>
+              <tr>
+                <td><%= album.artist %></td>
+                <td><%= album.title %></td>
+                <td><%= album.genre %></td>
+                <td><%= album.year %></td>
+                <td><form method="POST" action="/albums<%= album._id %>/delete"><input type="submit" value="delete"></form></td>
+              </tr>
+            <% }); %>
+        </tbody>
+      </table>
+
     </body>
 </html>

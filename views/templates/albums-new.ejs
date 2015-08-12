@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+  <head >
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <meta charset="utf-8">
+    <meta http-equiv="X-US-Compatible" content="IE=edge">
+    <title><%= title %> | 'Add New Album' </title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <h2>Enter New Album</h2>
+      <a href="/artists">Cancel</a>
+        <div class="artist-search">
+          <input type="text" placeholder="Artist">
+          <button>Search Artists</button>
+        </div>
+
+        <form action="/albums/new" method="POST">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input name="title" type="text" placeholder="White Album">
+        </div>
+        <div class="form-group">
+          <label for="genre">Genre:</label>
+          <input name="genre" type="text" placeholder="Genre">
+        </div>
+        <div class="form-group">
+          <label for="year">Year:</label>
+          <input name="year" type="text" placeholder="Year">
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+       </form>
+
+    </body>
+</html>

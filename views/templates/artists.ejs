@@ -9,9 +9,9 @@
     </head>
 
     <body>
-      <a href ="/artists/new">Search New Artist</a>
+      <a href="/artists/new"><button>Add New Artist</button></a>
 
-      <h1> Artists </h1>
+      <h1> All Artists </h1>
       <table>
         <thead>
           <tr>
@@ -24,15 +24,17 @@
         <tbody>
             <% artists.forEach(function(artist) { %>
               <tr>
-                <td><%= artist.name %></td>
+                <td><a href="/<%= artist._id %>/"><%= artist.name %></a></td>
                 <td><%= artist.genre %></td>
                 <td><textarea name="bio" rows="3"><%= artist.bio %></textarea>
                 </td>
                 <td><%= artist.album %></td>
+                <td><form action="/<%= artist._id %>/delete" method="POST"><input type="submit" value="delete"></form></td>
               </tr>
             <% }); %>
         </tbody>
       </table>
 
     </body>
+  <a href="/albums"><button>See All Albums</button></a>
 </html>
