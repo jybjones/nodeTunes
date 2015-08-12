@@ -32,15 +32,14 @@ router.post('/new', function (req, res) {
     });
   });
 
-
-router.post('/', function(req, res) {
-  var collection = global.db.collection('artists');
-  collection.save(req.body, function() {
-    res.redirect('/artists')
-    //res.render('templates/artists');
-  });
-
+router.post('/delete/:id', function(req, res){
+   var collection = global.db.collection('artists');
+   collection.remove({_id: ObjectID(req.params.id)}, function() {
+    res.redirect('/artists');
 });
+ });
+
+
 
 
 module.exports = router;
